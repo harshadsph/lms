@@ -1,0 +1,62 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+.zone-branding-wrapper{
+	background-color: #120639;
+}
+
+body, button, input, label, select, td, textarea {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 11px;
+}
+
+@media (min-width: 481px){
+	.zone-branding-wrapper .zone-branding .grid-4, .zone-branding-wrapper .zone-branding .grid-8{
+		margin: 20px 5px;
+		color: #FFF;		
+	}
+	
+	.block-user-login .form-item{
+		float: left;
+		margin-bottom: 1em;
+		margin-top: 1em;
+		width: 20%;
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+		
+	}
+
+	.block-user-login .item-list ul {
+		width: 50%;
+		margin: 0px;
+	}
+	
+	.block-user-login .item-list ul li {
+		float: left;
+		width: 40%;
+		margin: 0px;
+	}
+	
+	
+	.block-user-login .form-actions input {
+		margin-right: 0.5em;
+		position: absolute;
+		top: 20px;
+	}
+	
+	.block-user-login .form-actions{
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+	}
+	
+	
+}
+
+.block-user-login h2.block-title {
+    display: none;
+}
+
+a{
+	color: #FFF !important;
+	text-decoration: none !important;
+}
