@@ -10,7 +10,13 @@ body, button, input, label, select, td, textarea {
 	font-size: 11px;
 }
 
-@media (min-width: 481px){
+H1{
+	font-size: 27px;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+
+@media screen and (min-width: 840px){
 	.zone-branding-wrapper .zone-branding .grid-4, .zone-branding-wrapper .zone-branding .grid-8{
 		margin: 20px 5px;
 		color: #FFF;		
@@ -49,6 +55,23 @@ body, button, input, label, select, td, textarea {
 		margin-bottom: 0px !important;
 	}
 	
+	.lms-user-login-form-wrapper .field-name-field-first-name{
+		width: 35%;
+		float: left;
+	}
+	.lms-user-login-form-wrapper .field-name-field-last-name{
+		width: 60%;
+		float: left;
+	}
+	
+	.lms-user-login-form-wrapper .field-name-field-terms-condition-chk{
+		float: left;
+		margin-right: 20px;
+	}
+	
+	.lms-user-login-form-wrapper .form-wrapper{
+		float: left;
+	}
 	
 }
 

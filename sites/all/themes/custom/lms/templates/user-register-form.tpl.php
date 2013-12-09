@@ -1,0 +1,1 @@
+<h1>Sign Up</h1><div class="lms-user-login-form-wrapper">  <?php print drupal_render_children($form) ?></div>
