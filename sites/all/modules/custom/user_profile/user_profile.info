@@ -1,0 +1,4 @@
+name = User Profile
+description = The profile module allows the user to store there intrest in system
+core = 7.x
+

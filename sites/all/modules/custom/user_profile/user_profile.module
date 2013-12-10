@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function user_profile_reports_menu(){
+	$items = array();
+	$items['user_profile'] = array(
+		'page callback' 	=> 'user_profile',	
+		'access callback' 	=> TRUE,				
+	);
+	return $items;
+}
+
+
+/**
+ * Implements hook_user_insert().
+ */
+function user_profile_user_insert(&$edit, $account, $category) {
+	db_insert('user_profile_master')
+		->fields(array(
+			'uid' => $account->uid,
+			'new_user' => 0,
+		))->execute();  
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function user_profile_user_login(&$edit, $account) {
+	if(is_new_user($account->uid)){
+	
+		//Unset the existing destination 
+		unset($_GET['destination']);	
+
+		//Redirect the page to setup user profile 
+		drupal_goto('user_profile');
+		
+	}else{
+		dpm("OLD USER");
+	}
+}
+
+/*
+ * Below function is used to check weather user logged in first time or not?
+ *
+ */
+ function is_new_user($uid){
+	
+	$is_new_user = db_select('user_profile_master', 'a')
+					->fields('a',array('new_user'))
+					->condition('uid', $uid)							
+					->execute()
+					->fetchField();
+					
+	if($is_new_user == 0) {
+		return true;
+	}
+	return false;
+ }
+ 
+ 
+ function user_profile(){
+	return "";
+}
