@@ -11,7 +11,7 @@
  * for more information on this topic.
  */
  
- $profile = "profile";
+ 
  
  function lms_theme() {
   $items = array();  
@@ -19,11 +19,6 @@
     'render element' => 'form',
     'path' => drupal_get_path('theme', 'lms') . '/templates',
     'template' => 'user-register-form',    
-  );
-  
-  $items['profile_node_form'] = array(
-	'path' => drupal_get_path('theme', 'lms') . '/templates',
-    'template' => 'profile-node-form',    
   );
   
   return $items;
@@ -43,9 +38,3 @@ function lms_block_view_alter(&$data, $block) {
 	}
 
 }
-
-/*function lms_preprocess_page(&$var) {
-	if (isset($var['node']) && $var['node']->type == $profile) {
-		 $var['theme_hook_suggestions'][] = "profile_node_form";	
-	}
-}*/

@@ -1,0 +1,33 @@
+.page-user-profile .user-profile-wrapper{
+	border-style: ridge;
+    border-width: 3px;
+	border-color: #B05F3C;
+    padding: 20px;
+	color: #000033;
+	margin: 10 auto;
+} 
+
+.page-user-profile .user-profile-wrapper h3{
+	border-bottom: 2px solid #A0522D;
+	padding-bottom: 10px;
+	color: #B05F3C;
+	font-weight: normal;
+}
+
+.page-user-profile .user-profile-wrapper select, .page-user-profile .user-profile-wrapper input{
+	width: 250px;
+	height: 30px;
+}
+
+.page-user-profile .user-profile-wrapper input[type="submit"]{
+	width: 150px;
+}
+
+.page-user-profile .user-profile-wrapper input[type="button"]{
+	width: 100px;
+}
+
+.page-user-profile .user-profile-wrapper .user-profile-message{
+	padding: 10px;
+	font-weight: bold;
+}

@@ -1,15 +1,44 @@
 <?php
 
 /**
+ * Implements hook_init().
+ */
+function user_profile_init() {
+  global $user;
+  $account = user_load($user->uid);
+  
+}
+
+/**
  * Implements hook_menu().
  */
-function user_profile_reports_menu(){
+function user_profile_menu(){
 	$items = array();
-	$items['user_profile'] = array(
-		'page callback' 	=> 'user_profile',	
-		'access callback' 	=> TRUE,				
+	$items['user-profile'] = array(
+		'page callback' 	=> 'drupal_get_form',
+		'page arguments' 	=> array('user_profile'), 
+		'access arguments' 	=> array('administer user profile'),
+		'file'				=> 'user_profile.admin.inc',	
+	);
+	
+	$items['home'] = array(
+		'page callback' 	=> 'user_home',		
+		'access arguments' 	=> array('administer user profile'),
+		'file'				=> 'user_profile.admin.inc',	
 	);
 	return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function user_profile_permission() {
+  return array(
+    'administer user profile' => array(
+      'title' => t('user profile'),
+      'description' => t('Only authenticated user can access this pages.'),
+    ),
+  );
 }
 
 
@@ -28,16 +57,20 @@ function user_profile_user_insert(&$edit, $account, $category) {
  * Implements hook_user_login().
  */
 function user_profile_user_login(&$edit, $account) {
-	if(is_new_user($account->uid)){
 	
-		//Unset the existing destination 
-		unset($_GET['destination']);	
-
-		//Redirect the page to setup user profile 
-		drupal_goto('user_profile');
+	//Unset the existing destination 
+	unset($_GET['destination']);
+	
+	if(is_new_user($account->uid)){
+		//Redirect the page to setup the user profile 
+		drupal_goto('user-profile');
 		
 	}else{
-		dpm("OLD USER");
+		dpm($account);
+	
+		//Redirect to home page
+		drupal_goto('home');
+	
 	}
 }
 
@@ -57,9 +90,5 @@ function user_profile_user_login(&$edit, $account) {
 		return true;
 	}
 	return false;
- }
+ } 
  
- 
- function user_profile(){
-	return "";
-}
