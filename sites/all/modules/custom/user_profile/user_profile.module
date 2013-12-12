@@ -66,8 +66,7 @@ function user_profile_user_login(&$edit, $account) {
 		drupal_goto('user-profile');
 		
 	}else{
-		dpm($account);
-	
+		
 		//Redirect to home page
 		drupal_goto('home');
 	
