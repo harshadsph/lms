@@ -16,6 +16,10 @@ H1{
 	margin: 0 0 5px 0;
 }
 
+.user-profile-picture{
+	 margin: 10px 0;
+}
+
 @media screen and (min-width: 840px){
 	.front .zone-branding-wrapper .zone-branding .grid-4, .front .zone-branding-wrapper .zone-branding .grid-8{
 		margin: 20px 5px;
@@ -103,8 +107,7 @@ H1{
 	.user-login{
 		float: right;
 		width: 50%;
-	}		
-	
+	}	
 }
 
 .block-user-login h2.block-title { 

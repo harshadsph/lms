@@ -91,3 +91,65 @@ function user_profile_user_login(&$edit, $account) {
 	return false;
  } 
  
+ 
+ /**
+ * Implements hook_block_info().
+ */
+function user_profile_block_info() {
+
+  // TODO Rename block deltas (e.g. delta-0) to readable strings.
+  $blocks['delta-0']['info'] = t('User Picture');
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function user_profile_block_view($delta) {
+  $block = array();  
+  $block['content'] = user_profile_get_block();
+
+  return $block;
+}
+
+/**
+ * Creates the contents of the block.
+ */
+function user_profile_get_block() {
+
+	// Load up the user object
+	global $user;
+	$account = user_load($user->uid);
+	
+	if($account->picture){
+	//	print('<img src="$account->picture">');
+	}else{
+		//print('<img src="/sites/all/themes/custom/lms/images/defaultProfile.gif">');
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
