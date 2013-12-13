@@ -26,6 +26,14 @@ function user_profile_menu(){
 		'access arguments' 	=> array('administer user profile'),
 		'file'				=> 'user_profile.admin.inc',	
 	);
+	
+	$items['team']= array(
+		'page callback' 	=> 'drupal_get_form',
+		'page arguments' 	=> array('user_team'), 
+		'access arguments' 	=> array('administer user profile'),
+		'file'				=> 'user_team.admin.inc',	
+	);
+	
 	return $items;
 }
 

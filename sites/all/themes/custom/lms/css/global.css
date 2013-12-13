@@ -18,6 +18,8 @@ H1{
 
 .user-profile-picture{
 	 margin: 10px 0;
+	 box-shadow: 10px 10px 5px #888888;
+	 width: 160px;	 
 }
 
 @media screen and (min-width: 840px){

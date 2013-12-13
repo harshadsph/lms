@@ -31,3 +31,23 @@
 	padding: 10px;
 	font-weight: bold;
 }
+
+/* Team page CSS */
+.page-team .form-item{
+	padding-bottom: 15px !important;
+	border-bottom: 1px dotted;
+	width: 80%;
+}
+.page-team .user-team-wrapper select, .user-team-wrapper .user-profile-wrapper input{
+	width: 250px;
+	height: 30px;
+}
+.page-team .user-team-wrapper input[type="submit"]{
+	width: 150px;
+}
+
+.page-team .user-team-wrapper input[type="button"]{
+	width: 100px;
+}
+
+
