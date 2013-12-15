@@ -43,11 +43,29 @@
 	height: 30px;
 }
 .page-team .user-team-wrapper input[type="submit"]{
-	width: 150px;
+	width: 100px;
 }
 
 .page-team .user-team-wrapper input[type="button"]{
 	width: 100px;
 }
+
+.page-team #PLAYERS .form-type-textfield{
+	float: left;
+	width: 25%;
+	border-bottom: 0px;
+	padding: 5px;
+	
+}
+.page-team .players-wrapper-table{
+	clear: both;
+}
+
+.page-team .players-wrapper-table{
+	clear:both;
+	margin: 20px 0;
+}
+
+
 
 
