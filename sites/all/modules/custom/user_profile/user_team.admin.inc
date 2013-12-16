@@ -185,12 +185,36 @@ function ajax_user_team_submit($form, &$form_state){
 	$node_notification->type = 'notification';
 	
 	//Node title
-	$node_notification->title = $user->name." created the new team ".$team_name." !!!!";
+	$node_notification->title = $user->name." created the new team ";
 	
-	dpm($user);
+	$file_notification = file_load($user->picture);	
+	if($file_notification){
+		$file_notification_image = (object) array(
+			'fid' 		=> $file_notification->fid,
+			'uid' 		=> $file_notification->uid,
+			'uri' 		=> $file_notification->uri,
+			'filemime' 	=> $file_notification->filemime,
+			'status' 	=> $file_notification->status,
+		 );	
+		$node_notification->field_user_picture[LANGUAGE_NONE][0] = (array)$file_notification_image;
+	}
 	
 	//Node userid
 	$node_notification->field_user_id[und][0][value] = $user->uid;
+	
+	//Node notification title
+	$node_notification->field_notification_title[und][0][value] = $team_name;
+	
+	//Node notification thumbnail
+	$node_notification->field_notification_thumbnail[LANGUAGE_NONE][0] = (array)$file_image;
+	
+	$node_notification->field_notification_helper_links[und][0]['format'] = 'full_html';
+	$node_notification->field_notification_helper_links[und][1]['format'] = 'full_html';
+	$node_notification->field_notification_helper_links[und][2]['format'] = 'full_html';
+	
+	$node_notification->field_notification_helper_links[und][0][value] = "<a href='challenge'>Challenge The team</a>";
+	$node_notification->field_notification_helper_links[und][1][value] = "<a href='team-profile'>Team Profile</a>";	
+	$node_notification->field_notification_helper_links[und][2][value] = "<a href='Share'>Share</a>";	
 
 	//Node preparing
 	node_object_prepare($node_notification);	
@@ -198,8 +222,6 @@ function ajax_user_team_submit($form, &$form_state){
 	
 	//Save the node
 	node_save($node_notification);
-	
-	
 
 }
 
