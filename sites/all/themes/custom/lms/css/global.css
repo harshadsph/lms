@@ -1,12 +1,20 @@
 /* This file will hold styles for the mobile version of your website (mobile first). */
 /* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
 
+
 .zone-branding-wrapper{
 	background-color: #120639;
 }
 
+.region-content{
+	border: 1px solid #999;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+}
+
 body, button, input, label, select, td, textarea {
-	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif; 	
 	font-size: 11px;
 }
 
@@ -182,8 +190,7 @@ legend span {
     font-size: 11px;
     font-weight: 600;
 	margin: 20px 5px 5px 10px;
-    position: relative;
-    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);    
+    position: relative;  
 }
 
 .notification-row  .notification-title{	
